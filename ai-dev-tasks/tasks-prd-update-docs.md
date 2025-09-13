@@ -23,7 +23,7 @@
   - [x] 2.1 Revise the description for "Passo 2" to highlight that the final data model includes the critical `Utilizadores` table.
   - [x] 2.2 Revise the description for "Passo 3" to specify that the security model is a data-driven architecture.
   - [x] 2.3 Revise the description for "Passo 4" to explicitly mention that the Coordinator's control panel includes a user management interface.
-- [ ] 3.0 Perform Final Review and Cleanup of Technical Implementation Guides (`passo-2`, `passo-3`, `passo-5`)
-  - [ ] 3.1 Perform a final review of `Plano de Implementacao - passo 2.md`, ensuring the explanatory text is fully consistent with the v2.0 SQL script.
-  - [ ] 3.2 Perform a final review of `Plano de Implementacao - passo 3.md`, ensuring the guide clearly explains the data-driven security model.
-  - [ ] 3.3 Verify that `Plano de Implementacao - passo 5.md` is in its final, correct state, containing guides for both single-item and batch processing of pre-registrations.
+- [x] 3.0 Perform Final Review and Cleanup of Technical Implementation Guides (`passo-2`, `passo-3`, `passo-5`)
+  - [x] 3.1 Perform a final review of `Plano de Implementacao - passo 2.md`, ensuring the explanatory text is fully consistent with the v2.0 SQL script.
+  - [x] 3.2 Perform a final review of `Plano de Implementacao - passo 3.md`, ensuring the guide clearly explains the data-driven security model.
+  - [x] 3.3 Verify that `Plano de Implementacao - passo 5.md` is in its final, correct state, containing guides for both single-item and batch processing of pre-registrations.
