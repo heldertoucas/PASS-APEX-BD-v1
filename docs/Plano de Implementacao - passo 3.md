@@ -30,9 +30,51 @@ Copie e cole o seguinte bloco de código na caixa de texto. Este código vai ins
 
 -- Inserir o nosso Coordenador de teste
 
-INSERT INTO Utilizadores (Nome_Completo, Email, Funcao, Ativo)
+# Princípios para Scripts de Dados de Teste
 
-VALUES ('Coordenador Teste', 'coordenador.teste@email.com', 'COORDENADOR', 'S');
+A criação de dados de teste é uma tarefa de programação que exige a compreensão da estrutura e das regras do modelo de dados. As diretrizes seguintes garantem que os scripts para popular a base de dados são robustos, repetíveis e fáceis de manter.
+
+### **Princípio 1: Scripts Devem ser Reexecutáveis (Reset, Não Apenas Insert)**
+
+Um script que apenas insere dados (`INSERT`) só funciona uma vez. Para permitir testes repetidos, um script deve sempre começar por limpar os dados antigos antes de inserir os novos.
+
+*   **Diretriz:** Inicie sempre o script com uma fase de limpeza (`DELETE`), seguida por uma fase de inserção (`INSERT`). Isto garante a repetibilidade.
+
+### **Princípio 2: Respeitar a Hierarquia dos Dados**
+
+A base de dados impõe a integridade referencial. Não se pode apagar um registo "pai" se um "filho" ainda depender dele.
+
+*   **Diretriz para `DELETE`:** A limpeza deve seguir a ordem hierárquica inversa: apague os "netos" primeiro, depois os "filhos", e só no fim os "pais".
+*   **Diretriz para `INSERT`:** A inserção segue a ordem hierárquica natural: crie os "pais" primeiro para que os "filhos" possam referenciá-los.
+
+### **Princípio 3: Isolar Dados de Configuração dos Dados de Teste**
+
+Nem todos os dados são iguais. A "mobília" da aplicação (ex: `TIPOS_DE_ACAO`) é configuração estática, enquanto a "atividade" (ex: `INSCRITOS`, `TURMAS`) é operacional e dinâmica.
+
+*   **Diretriz:** Um script de reset deve ser cirúrgico, apagando apenas os dados operacionais. Os dados de configuração devem ser populados uma única vez (idealmente no script de criação do schema) e preservados.
+
+### **Princípio 4: Nunca Assumir IDs Gerados Automaticamente**
+
+IDs gerados pela base de dados (`GENERATED AS IDENTITY`) não são previsíveis. Usar valores "hardcoded" (ex: `VALUES (1, ...)` para um ID) é uma fonte comum de erros.
+
+*   **Diretriz:** A abordagem profissional é programática. Use um bloco PL/SQL para capturar o ID real gerado pela base de dados e usá-lo para inserir registos dependentes.
+
+**Exemplo de Implementação:**
+```sql
+DECLARE
+    v_nova_turma_id TURMAS.ID_TURMA%TYPE;
+BEGIN
+    -- 1. Inserir o registo "pai" e capturar o seu ID real
+    INSERT INTO Turmas (Nome, ID_Curso)
+    VALUES ('Nova Turma de Teste', 1)
+    RETURNING ID_Turma INTO v_nova_turma_id;
+
+    -- 2. Usar o ID capturado para inserir um registo "filho"
+    INSERT INTO Sessoes (ID_Turma, Nome)
+    VALUES (v_nova_turma_id, 'Sessão de Boas-vindas');
+END;
+/
+```
 
 -- Inserir o nosso Técnico de teste
 
@@ -53,6 +95,35 @@ COMMIT;
 Clique no botão Run. Deverá ver uma mensagem a confirmar que 3 linhas foram criadas.
 
 Resultado: A nossa tabela Utilizadores contém agora os dados e as funções que o nosso sistema de segurança irá consultar.
+
+#### Princípio de Design: Segurança Orientada a Dados
+
+A lógica de segurança e as permissões devem ser controladas pela base de dados (a nossa 'fonte da verdade'), e não por configurações separadas na ferramenta de desenvolvimento. Isto garante um modelo unificado e consistente.
+
+**Exemplo de Implementação:** A função `is_role` no pacote `SEGURANCA_PKG` consulta diretamente a tabela `Utilizadores` para verificar a função do utilizador atualmente logado, em vez de consultar um grupo APEX.
+
+```sql
+FUNCTION is_role (p_role IN VARCHAR2) RETURN BOOLEAN AS
+    v_funcao Utilizadores.Funcao%TYPE;
+BEGIN
+    -- Procura na nossa tabela de dados qual a função do utilizador logado.
+    SELECT Funcao INTO v_funcao
+    FROM Utilizadores
+    WHERE Email = v('APP_USER') AND Ativo = 'S';
+
+    -- Compara a função encontrada com a função que queremos verificar.
+    IF v_funcao = p_role THEN
+        RETURN TRUE;
+    ELSE
+        RETURN FALSE;
+    END IF;
+EXCEPTION
+    -- Se o utilizador não for encontrado, não tem permissão.
+    WHEN NO_DATA_FOUND THEN
+        RETURN FALSE;
+END is_role;
+```
+
 3.3. Criar o "Cérebro" de Segurança Revisto (O Pacote PL/SQL)
 Vamos agora substituir o nosso pacote de segurança antigo pela nova versão, muito mais inteligente.
 
