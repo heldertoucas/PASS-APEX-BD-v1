@@ -18,7 +18,7 @@ Este documento delineia o plano de implementação completo para a aplicação, 
 
 * ### **Passo 2: A Estrutura Central (Modelo de Dados Completo)**
 
-  * **Descrição:** Este passo crucial traduz o nosso **Modelo de Dados v4.0** na sua totalidade para uma estrutura de base de dados real. Ao final, todas as tabelas, colunas e relações necessárias para a aplicação final estarão criadas.  
+  * **Descrição:** Este passo crucial traduz o nosso **Modelo de Dados v4.0** na sua totalidade para uma estrutura de base de dados real. A versão final do modelo inclui a tabela central `Utilizadores`, garantindo a integridade de todo o sistema. Ao final, todas as tabelas, colunas e relações necessárias para a aplicação final estarão criadas.  
   * **Ações Detalhadas:**  
     1. Executar o script SQL de criação de tabelas (versão final, baseada no Modelo v4.0).  
     2. Este script irá criar **todas as tabelas de lookup** (ex: TIPOS\_ESTADO\_TURMA) e populá-las com os valores iniciais.  
@@ -29,7 +29,7 @@ Este documento delineia o plano de implementação completo para a aplicação, 
 
 * ### **Passo 3: As Chaves do Reino (Estrutura de Segurança Completa)**
 
-  * **Descrição:** Implementaremos a nossa arquitetura de segurança final, baseada em perfis e centralizada em PL/SQL, garantindo que o sistema é seguro e manutenível desde o início.  
+  * **Descrição:** Implementaremos a nossa arquitetura de segurança final, que é **orientada a dados (data-driven)**. As permissões serão geridas pela tabela `Utilizadores` e a lógica de verificação centralizada num pacote PL/SQL, garantindo um sistema coeso, seguro e manutenível desde o início.  
   * **Ações Detalhadas:**  
     1. Criar os três **Grupos de Utilizadores** no Workspace APEX: COORDENADORES, TECNICOS, FORMADORES.  
     2. Criar os utilizadores de teste e associá-los aos seus respetivos grupos.  
@@ -46,7 +46,7 @@ Este documento delineia o plano de implementação completo para a aplicação, 
 
   * **Descrição:** Construir a interface de gestão para o Coordenador, seguindo a arquitetura "Hub & Spoke" para garantir uma experiência centralizada e uma implementação robusta.  
   * **Ações Detalhadas:**  
-    1. Criar a página "Hub" chamada **"Central de Configurações"**, com uma lista de seleção para todas as tabelas de lookup e de catálogo.  
+    1. Criar a página "Hub" chamada **"Central de Configurações"**, com uma lista de seleção para todas as tabelas de lookup, de catálogo e para a nova interface de **gestão de utilizadores**.  
     2. Para cada item nessa lista, criar uma página de gestão "Spoke" dedicada (do tipo Interactive Grid), sem entrada no menu de navegação.  
     3. Implementar a lógica de "Branches" (redirecionamento) na página "Hub" para que, ao selecionar uma opção, o utilizador seja levado para a página "Spoke" correspondente.  
     4. Proteger todas estas páginas com o esquema de autorização is\_coordenador.  
