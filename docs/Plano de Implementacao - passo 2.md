@@ -65,6 +65,10 @@ O script original era funcional, mas uma análise crítica revela um ponto de fr
 
 ### **3\. Script SQL Integral e Revisto (Versão 2.0)**
 
+#### Princípio de Design: Integridade do Modelo de Dados
+
+O modelo de dados deve ser completo e garantir a integridade referencial antes da implementação. Todas as entidades referenciadas devem existir. A "Avaliação Crítica" anterior identificou que a tabela `Utilizadores` estava em falta, o que tornaria impossível criar relações de chave estrangeira (foreign key) a partir de tabelas como `Turmas` ou `Registos_De_Acoes`. A inclusão da tabela `Utilizadores` no script (Parte 0) foi o passo corretivo essencial para garantir esta integridade.
+
 Este script inclui a nova tabela `Utilizadores` e todas as `constraints` de chave estrangeira atualizadas.
 
 \-- \=================================================================================
