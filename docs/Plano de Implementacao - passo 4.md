@@ -142,4 +142,81 @@ Agora vamos ligar o "Hub" ao "Spoke" com a configuração robusta que descobrimo
    * **Problema de Edição (Grelha não editável):**  
      1. Execute a checklist do passo 4.2.1: verifique o interruptor "Edit \> Enabled" nos "Attributes" da grelha e o campo "Primary Key Column" na "Source" da região.
 
+#### **4.5. Expandindo a Sala de Controlo: Outras Páginas de Gestão**
+
+Com a página "Gestão de Cursos" como modelo, pode agora expandir a "Sala de Controlo" do Coordenador criando páginas de gestão para as restantes tabelas de catálogo e de lookup. O processo é o mesmo:
+
+1.  **Criar a Página Interactive Grid:**
+    *   No App Builder, clique em **Create Page > Interactive Grid**.
+    *   **Page Name:** Escolha um nome descritivo (ex: `Gestão de Programas`).
+    *   **Navigation:** **DESATIVE** a opção **Create a navigation menu entry**.
+    *   **Data Source:** Selecione a tabela correspondente (ex: `PROGRAMAS`).
+    *   Clique em **Create Page**.
+2.  **Configurar a Página (Propriedades Essenciais):**
+    *   No Page Designer da nova página, defina o **Alias** (ex: `GESTAO_PROGRAMAS`).
+    *   Em **Security > Authorization Scheme**, selecione **is_coordenador**.
+3.  **Garantir a Edição (Checklist 4.2.1):**
+    *   Verifique se "Edit > Enabled" está **LIGADO** nos "Attributes" da região Interactive Grid.
+    *   Confirme que o "Primary Key Column" está definido na "Source" da região.
+4.  **Polir a Interface (Checklist 4.2.2):**
+    *   Ajuste os **Headings** das colunas para serem mais amigáveis.
+    *   Para colunas que são chaves estrangeiras (IDs), altere o **Type** para **"Popup LOV"** e configure a **SQL Query** para a tabela de lookup correspondente.
+
+**Exemplos de Configuração para Outras Páginas "Spoke":**
+
+Aqui estão alguns exemplos concisos para as tabelas mais comuns:
+
+*   **Tabela:** `PROGRAMAS`
+    *   **Page Name:** `Gestão de Programas`
+    *   **Alias:** `GESTAO_PROGRAMAS`
+    *   **Primary Key:** `ID_PROGRAMA`
+    *   **LOVs Relevantes:** N/A (tabela de topo)
+
+*   **Tabela:** `COMPETENCIAS`
+    *   **Page Name:** `Gestão de Competências`
+    *   **Alias:** `GESTAO_COMPETENCIAS`
+    *   **Primary Key:** `ID_COMPETENCIA`
+    *   **LOVs Relevantes:**
+        *   `ID_AREA_COMPETENCIA`: `SELECT NOME as display_value, 
+               ID_AREA_COMPETENCIA as return_value 
+          FROM TIPOS_AREA_COMPETENCIA 
+      ORDER BY ORDEM_EXIBICAO`
+        *   `ID_NIVEL_PROFICIENCIA`: `SELECT NOME as display_value, 
+               ID_NIVEL_PROFICIENCIA as return_value 
+          FROM TIPOS_NIVEL_PROFICIENCIA 
+      ORDER BY ORDEM_EXIBICAO`
+
+*   **Tabela:** `MODELOS_DE_COMUNICACAO`
+    *   **Page Name:** `Gestão de Modelos de Comunicação`
+    *   **Alias:** `GESTAO_MODELOS_COMUNICACAO`
+    *   **Primary Key:** `ID_MODELO`
+    *   **LOVs Relevantes:**
+        *   `ID_TIPO_NOTIFICACAO`: `SELECT NOME as display_value, 
+               ID_TIPO_NOTIFICACAO as return_value 
+          FROM TIPOS_NOTIFICACAO 
+      ORDER BY ORDEM_EXIBICAO`
+
+*   **Tabela:** `TIPOS_GENERO`
+    *   **Page Name:** `Gestão de Géneros`
+    *   **Alias:** `GESTAO_GENEROS`
+    *   **Primary Key:** `ID_GENERO`
+    *   **LOVs Relevantes:** N/A (tabela de lookup simples)
+
+*   **Tabela:** `TIPOS_ESTADO_TURMA`
+    *   **Page Name:** `Gestão de Estados de Turma`
+    *   **Alias:** `GESTAO_ESTADOS_TURMA`
+    *   **Primary Key:** `ID_ESTADO_TURMA`
+    *   **LOVs Relevantes:** N/A (tabela de lookup simples)
+
+**Atualizar o Seletor na Página "Hub":**
+
+Finalmente, para que estas novas páginas sejam acessíveis, terá de adicionar cada uma delas à lista de seleção `P2_PAGINA_ALVO` na sua página "Hub" (`CENTRAL_CONFIG`).
+
+1.  Navegue para a página "Hub" (`CENTRAL_CONFIG`) no Page Designer.
+2.  Selecione o item **Select List** `P2_PAGINA_ALVO`.
+3.  Em **List of Values > Static Values**, adicione novas entradas para cada página que criou:
+    *   **Display Value:** `Gerir Programas` | **Return Value:** `GESTAO_PROGRAMAS`
+    *   **Display Value:** `Gerir Competências` | **Return Value:** `GESTAO_COMPETENCIAS`
+    *   ... e assim por diante para todas as páginas que criar.
+
 **Conclusão:** Ao seguir este guia consolidado, implementou a "Sala de Controlo" de uma forma que não só é funcional e segura, mas também robusta, manutenível e com uma experiência de utilizador superior, incorporando já as soluções para os problemas mais comuns neste tipo de implementação.  
