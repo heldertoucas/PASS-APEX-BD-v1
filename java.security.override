@@ -1,0 +1,2 @@
+security.provider.1=oracle.security.pki.OraclePKIProvider
+security.provider.2=oracle.security.jgss.OracleJGSSProvider

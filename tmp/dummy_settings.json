@@ -1,0 +1,27 @@
+{
+  "ideMode": true,
+  "selectedAuthType": "oauth-personal",
+  "hasSeenIdeIntegrationNudge": true,
+  "mcpServers": {
+    "context7": {
+      "httpUrl": "https://mcp.context7.com/mcp"
+    },
+    "oracle-sqlcl": {
+      "command": "sql",
+      "args": ["-mcp"],
+      "env": {
+        "TNS_ADMIN": "/Users/helder/lib/oracle/wallets/Wallet_QIK84H5RGWHO9EL0"
+      },
+      "timeout": 30000
+    },
+    "apex-custom": {
+      "command": "/opt/homebrew/bin/python3.12",
+      "args": ["/Users/helder/PASS-APEX-BD-v1/oracle-apex-mcp/mcp-servers/apex-server.py"],
+      "cwd": "/Users/helder/PASS-APEX-BD-v1/oracle-apex-mcp",
+      "env": {
+        "TNS_ADMIN": "/Users/helder/lib/oracle/wallets/Wallet_QIK84H5RGWHO9EL0"
+      },
+      "timeout": 30000
+    }
+  }
+}
