@@ -13,16 +13,16 @@
 
 ## Tasks
 
-- [ ] 1.0 Clean and Prepare the Development Environment
+- [x] 1.0 Clean and Prepare the Development Environment
   - [x] 1.1 Execute `sudo rm -rf /Users/helder/lib/oracle/instantclient_23_3` to delete the old, incomplete Instant Client directory.
   - [x] 1.2 Execute `rm -rf /Users/helder/Downloads/instantclient_19_16` to delete the incorrectly installed files in the Downloads folder.
   - [x] 1.3 Create a new, empty directory for the clean installation: `mkdir -p /Users/helder/lib/oracle/instantclient_arm64`.
 
 - [ ] 2.0 Install and Configure a Compatible Java Development Kit (JDK)
-  - [ ] 2.1 Manually download the `.dmg` installer for **Azul Zulu JDK 17 (LTS)** for macOS ARM 64-bit.
-  - [ ] 2.2 Run the downloaded installer package.
-  - [ ] 2.3 Identify the installation path of the new JDK (typically under `/Library/Java/JavaVirtualMachines/`).
-  - [ ] 2.4 Update the `JAVA_HOME` export in the `~/.zshrc` file to point to the new Azul Zulu JDK path.
+  - [x] 2.1 Manually download the `.dmg` installer for **Azul Zulu JDK 17 (LTS)** for macOS ARM 64-bit.
+  - [x] 2.2 Run the downloaded installer package.
+  - [x] 2.3 Identify the installation path of the new JDK (typically under `/Library/Java/JavaVirtualMachines/`).
+  - [x] 2.4 Update the `JAVA_HOME` export in the `~/.zshrc` file to point to the new Azul Zulu JDK path.
 
 - [ ] 3.0 Install and Configure the Oracle Instant Client
   - [ ] 3.1 Manually download the **Basic**, **SQL*Plus**, and **Tools** packages for Instant Client **ARM64** from the Oracle website.

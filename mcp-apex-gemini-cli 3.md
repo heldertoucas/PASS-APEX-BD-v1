@@ -339,3 +339,74 @@ Antes de configurar o MCP, confirme que tem:
 - [ ] **Gemini CLI** instalado e autenticado
 - [ ] **Permissões adequadas** na base de dados
 - [ ] **Caminhos correctos** para todos os executáveis
+
+
+Informações da aplicação APEX atual:
+Com certeza. Aqui está a versão final do relatório, formatada de forma limpa e sem as menções às citações.
+
+# Relatório de Configuração do Ambiente APEX (Atualizado)
+
+Este documento resume as informações técnicas recolhidas a partir dos resultados das queries SQL executadas no ambiente Oracle APEX.
+
+## 1. Resumo do Ambiente
+
+- **Versão da Base de Dados**: Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production.
+- **Versão APEX**: 24.2.8.
+- **Nome da Instância**: fcexdajp4.
+- **Service Name**: YBQCJFNKPL5ITMO_QIK84H5RGWHO9EL0_low.adb.oraclecloud.com.
+
+## 2. Detalhes da Base de Dados
+
+- **Schema Atual (CURRENT_SCHEMA)**: ORDS_PLSQL_GATEWAY.
+- **Parsing Schema (última execução de scripts)**: WKSP_PASSAPORTEDIGITAL.
+
+## 3. Configuração do Workspace APEX
+
+- **Workspace ID**: 7857705588416879.
+- **Workspace Name**: O nome do workspace não foi retornado nas queries.
+
+## 4. Aplicações no Workspace
+
+### Aplicação Principal: Passaporte Competências Digitais
+
+- **ID da Aplicação**: 100.
+- **Nome da Aplicação**: Passaporte Competências Digitais.
+- **Alias da Aplicação**: PASSAPORTE-COMPETÊNCIAS-DIGITAIS.
+- **Estado (Build Status)**: Run and Develop.
+- **Versão**: Release 1.0.
+
+#### **Tabelas Utilizadas (Aplicação 100)**
+As seguintes tabelas foram identificadas como estando em uso pela aplicação principal, todas pertencentes ao schema `WKSP_PASSAPORTEDIGITAL`:
+- BADGES.
+- COMPETENCIAS.
+- CONQUISTAS.
+- NIVEIS.
+- TRILHAS.
+- UTILIZADORES.
+
+### Outras Aplicações no Ambiente
+
+- **Oracle APEX App Builder**: ID 4000.
+- **Oracle APEX Create App Wizard**: ID 4020.
+- **Oracle APEX Internal Administration**: ID 4050.
+- **Oracle APEX Home**: ID 4100.
+- **Scheme Authentication Login**: ID 4155.
+- **Oracle APEX Data Workshop**: ID 4300.
+- **Oracle APEX Workspace Administration**: ID 4350.
+- **Oracle APEX Builder, Wizard Messages and Native Plug-Ins**: ID 4411.
+- **Oracle APEX Runtime Messages**: ID 4470.
+- **Oracle APEX SQL Workshop**: ID 4500.
+- **Oracle APEX Workspace / INTERNAL Login**: ID 4550.
+- **Oracle APEX Issues**: ID 4600.
+- **Oracle APEX Feedback**: ID 4650.
+- **Oracle APEX New Service Signup**: ID 4700.
+- **Oracle APEX Productivity and Sample Applications**: ID 4750.
+- **Oracle APEX RESTful Services**: ID 4850.
+- **Universal Theme Legacy**: ID 8842.
+- **Universal Theme 24.2**: ID 8842.242.
+
+## 5. Atividade de Scripts
+
+- **Último utilizador a executar scripts**: HELDERTOUCAS@GMAIL.COM.
+- **Data da última execução**: Sunday, September 14, 2025.
+- **Resultado da última execução**: Foram processados 8 statements, dos quais 5 foram bem-sucedidos e 3 resultaram em erros.
