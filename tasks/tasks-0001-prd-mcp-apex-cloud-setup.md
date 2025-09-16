@@ -24,15 +24,15 @@
   - [x] 2.3 Identify the installation path of the new JDK (typically under `/Library/Java/JavaVirtualMachines/`).
   - [x] 2.4 Update the `JAVA_HOME` export in the `~/.zshrc` file to point to the new Azul Zulu JDK path.
 
-- [ ] 3.0 Install and Configure the Oracle Instant Client
+- [x] 3.0 Install and Configure the Oracle Instant Client
   - [x] 3.1 Manually download the **Basic**, **SQL*Plus**, and **Tools** packages for Instant Client **ARM64** from the Oracle website.
   - [x] 3.2 Unzip all three packages into the clean directory created in step 1.3 (`/Users/helder/lib/oracle/instantclient_arm64`).
   - [x] 3.3 Update the `ORACLE_HOME` export in the `~/.zshrc` file to point to the new `instantclient_arm64` directory.
   - [x] 3.4 Apply the changes to the current shell session using `source ~/.zshrc`.
 
 - [ ] 4.0 Configure MCP Servers and Project Context
-  - [ ] 4.1 Verify the `oracle-sqlcl` and `apex-custom` server definitions in `~/.gemini/settings.json` are correct and point to the right executables and environment variables (including `TNS_ADMIN`).
-  - [ ] 4.2 Verify the `GEMINI.md` file contains the correct, specific details for the target cloud APEX application.
+  - [x] 4.1 Verify the `oracle-sqlcl` and `apex-custom` server definitions in `~/.gemini/settings.json` are correct and point to the right executables and environment variables (including `TNS_ADMIN`).
+  - [x] 4.2 Verify the `GEMINI.md` file contains the correct, specific details for the target cloud APEX application.
 
 - [ ] 5.0 Launch and Verify the Full MCP Environment
   - [ ] 5.1 Start the `oracle-sqlcl` MCP server as a background process.
