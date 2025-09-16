@@ -1,10 +1,12 @@
 # **Guia de Criação: Passaporte Competências Digitais em Oracle APEX**
 
 ## Passo 1: Preparar o Ambiente e a Base de Dados
+**Status:** Concluído.
 
 Olá\! Bem-vindo ao início da jornada para dar vida à sua aplicação. Nesta primeira fase, vamos criar e configurar a infraestrutura fundamental na Oracle Cloud. Pense nisto como adquirir o terreno e construir as fundações da sua casa. No final deste passo, terá uma base de dados robusta e um ambiente de desenvolvimento prontos para começar a criar as funcionalidades da aplicação.
 
 ### 1.1. Criar a sua Conta Gratuita na Oracle Cloud (Free Tier)
+**Status:** Concluído.
 
 A Oracle oferece um nível de serviço "Sempre Gratuito" (Always Free) que é perfeito para desenvolver e até mesmo hospedar esta aplicação sem custos.
 
@@ -15,6 +17,7 @@ A Oracle oferece um nível de serviço "Sempre Gratuito" (Always Free) que é pe
 5. Conclusão: Após a confirmação, a sua conta Oracle Cloud será provisionada. Pode demorar alguns minutos. Receberá um e-mail quando tudo estiver pronto.
 
 ### 1.2. Criar a sua Base de Dados Autónoma (Autonomous Database)
+**Status:** Concluído.
 
 Agora que tem a sua conta, vamos criar a base de dados que irá armazenar toda a informação do Passaporte Digital.
 
@@ -30,6 +33,7 @@ Agora que tem a sua conta, vamos criar a base de dados que irá armazenar toda a
 5. Finalize a criação: Clique em "Create Autonomous Database" no final da página. A base de dados começará a ser provisionada (pode ficar com o estado "Provisioning" a laranja). Aguarde até que fique verde e com o estado "Available". Isto pode levar alguns minutos.
 
 ### 1.3. Criar o seu Ambiente de Desenvolvimento (Workspace APEX)
+**Status:** Concluído.
 
 Com a base de dados pronta, vamos criar o espaço de trabalho onde irá efetivamente construir a sua aplicação.
 

@@ -33,12 +33,12 @@
   - [x] 3.3 Identify features described in the UX document that are not fully supported by the current schema (e.g., `URL_Certificado_Conclusao` which is in the model but might not be implemented).
   - [x] 3.4 For each discrepancy found, add a `> **Nota de Implementação:** ...` block explaining the difference between the ideal state and the current implementation.
   - [x] 3.5 Correct any spelling and grammar errors encountered.
-- [ ] 4.0 Update all Implementation Plan documents (`Plano de Implementacao - *.md`)
-  - [ ] 4.1 For each `passo-X.md` file, review the described actions and technical steps.
-  - [ ] 4.2 Compare the planned steps with the actual schema and data provided.
-  - [ ] 4.3 Add a `**Status:**` line (e.g., `**Status:** Concluído.`) to each major section to reflect its completion state.
-  - [ ] 4.4 If the final implementation differs from the plan, add a note explaining the deviation and the final outcome.
-- [ ] 5.0 Create the dummy data file
-  - [ ] 5.1 Create a new file named `dummy-data.sql` in the `PASS-APEX-BD-v1/tasks/` directory.
-  - [ ] 5.2 Populate the file with SQL `INSERT` statements to create a varied set of test data.
-  - [ ] 5.3 The data should include at least: 5 new `PRE_INSCRICOES`, 10 `INSCRITOS`, 4 `TURMAS` (in various states), and related `MATRICULAS` and `PRESENCAS`.
+- [x] 4.0 Update all Implementation Plan documents (`Plano de Implementacao - *.md`)
+  - [x] 4.1 For each `passo-X.md` file, review the described actions and technical steps.
+  - [x] 4.2 Compare the planned steps with the actual schema and data provided.
+  - [x] 4.3 Add a `**Status:**` line (e.g., `**Status:** Concluído.`) to each major section to reflect its completion state.
+  - [x] 4.4 If the final implementation differs from the plan, add a note explaining the deviation and the final outcome.
+- [x] 5.0 Create the dummy data file
+  - [x] 5.1 Create a new file named `dummy-data.sql` in the `PASS-APEX-BD-v1/tasks/` directory.
+  - [x] 5.2 Populate the file with SQL `INSERT` statements to create a varied set of test data.
+  - [x] 5.3 The data should include at least: 5 new `PRE_INSCRICOES`, 10 `INSCRITOS`, 4 `TURMAS` (in various states), and related `MATRICULAS` and `PRESENCAS`.

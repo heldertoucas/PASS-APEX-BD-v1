@@ -1,6 +1,10 @@
 Guia Integral e Revisto (Versão 2.0): Passo 3 - As Chaves do Reino
+**Status:** Concluído.
+
 Objetivo: Implementar um sistema de segurança orientado a dados, onde as permissões de cada utilizador são definidas diretamente na nossa tabela Utilizadores, garantindo um modelo unificado, robusto e fácil de gerir.
 A Nossa Estratégia de Segurança (Revista e Corrigida)
+**Status:** Concluído.
+
 A nova estratégia é mais coesa:
 
 Utilizadores APEX (A Chave de Entrada): Continuamos a precisar de utilizadores no APEX. Eles são a "chave" que permite abrir a "porta" da aplicação (fazer login).
@@ -13,6 +17,8 @@ Esta abordagem é superior porque se precisarmos de mudar a função de um utili
 
 
 3.1. Criar os Utilizadores de Teste no APEX
+**Status:** Concluído.
+
 Este passo mantém-se, pois precisamos de contas para poder fazer login. Se já os criou da vez anterior, pode confirmar que existem e passar à frente.
 
 Aceda a Administration > Manage Users and Groups.
@@ -22,6 +28,8 @@ TECNICO_TESTE (Email: tecnico.teste@email.com)
 FORMADOR_TESTE (Email: formador.teste@email.com)
 Importante: Para este novo modelo, não precisa de os associar a nenhum Grupo APEX. A sua função será lida da base de dados.
 3.2. Popular a Nossa Tabela Utilizadores (O Passo Novo e Crucial)
+**Status:** Concluído.
+
 Agora, vamos preencher as "fichas de funcionário" na nossa tabela de dados.
 
 Volte à página inicial do Workspace e vá para SQL Workshop > SQL Commands.
@@ -31,16 +39,19 @@ Copie e cole o seguinte bloco de código na caixa de texto. Este código vai ins
 -- Inserir o nosso Coordenador de teste
 
 # Princípios para Scripts de Dados de Teste
+**Status:** Concluído.
 
 A criação de dados de teste é uma tarefa de programação que exige a compreensão da estrutura e das regras do modelo de dados. As diretrizes seguintes garantem que os scripts para popular a base de dados são robustos, repetíveis e fáceis de manter.
 
 ### **Princípio 1: Scripts Devem ser Reexecutáveis (Reset, Não Apenas Insert)**
+**Status:** Concluído.
 
 Um script que apenas insere dados (`INSERT`) só funciona uma vez. Para permitir testes repetidos, um script deve sempre começar por limpar os dados antigos antes de inserir os novos.
 
 *   **Diretriz:** Inicie sempre o script com uma fase de limpeza (`DELETE`), seguida por uma fase de inserção (`INSERT`). Isto garante a repetibilidade.
 
 ### **Princípio 2: Respeitar a Hierarquia dos Dados**
+**Status:** Concluído.
 
 A base de dados impõe a integridade referencial. Não se pode apagar um registo "pai" se um "filho" ainda depender dele.
 
@@ -48,12 +59,14 @@ A base de dados impõe a integridade referencial. Não se pode apagar um registo
 *   **Diretriz para `INSERT`:** A inserção segue a ordem hierárquica natural: crie os "pais" primeiro para que os "filhos" possam referenciá-los.
 
 ### **Princípio 3: Isolar Dados de Configuração dos Dados de Teste**
+**Status:** Concluído.
 
 Nem todos os dados são iguais. A "mobília" da aplicação (ex: `TIPOS_DE_ACAO`) é configuração estática, enquanto a "atividade" (ex: `INSCRITOS`, `TURMAS`) é operacional e dinâmica.
 
 *   **Diretriz:** Um script de reset deve ser cirúrgico, apagando apenas os dados operacionais. Os dados de configuração devem ser populados uma única vez (idealmente no script de criação do schema) e preservados.
 
 ### **Princípio 4: Nunca Assumir IDs Gerados Automaticamente**
+**Status:** Concluído.
 
 IDs gerados pela base de dados (`GENERATED AS IDENTITY`) não são previsíveis. Usar valores "hardcoded" (ex: `VALUES (1, ...)` para um ID) é uma fonte comum de erros.
 
@@ -97,6 +110,7 @@ Clique no botão Run. Deverá ver uma mensagem a confirmar que 3 linhas foram cr
 Resultado: A nossa tabela Utilizadores contém agora os dados e as funções que o nosso sistema de segurança irá consultar.
 
 #### Princípio de Design: Segurança Orientada a Dados
+**Status:** Concluído.
 
 A lógica de segurança e as permissões devem ser controladas pela base de dados (a nossa 'fonte da verdade'), e não por configurações separadas na ferramenta de desenvolvimento. Isto garante um modelo unificado e consistente.
 
@@ -125,6 +139,8 @@ END is_role;
 ```
 
 3.3. Criar o "Cérebro" de Segurança Revisto (O Pacote PL/SQL)
+**Status:** Concluído.
+
 Vamos agora substituir o nosso pacote de segurança antigo pela nova versão, muito mais inteligente.
 
 Vá para SQL Workshop > Object Browser.
@@ -209,6 +225,8 @@ Clique em Compile Package para criar a nova versão.
 
 Resultado: O nosso novo "cérebro" de segurança está instalado e a ler as permissões diretamente da nossa base de dados.
 3.4. Ligar a Aplicação às Novas Regras (Esquemas de Autorização)
+**Status:** Concluído.
+
 Este passo é idêntico ao anterior, mas vamos garantir que está correto. Se já criou os esquemas, pode verificar se estão bem configurados.
 
 Vá a App Builder > [A sua Aplicação] > Shared Components > Authorization Schemes.
@@ -219,6 +237,8 @@ Nome: is_formador | Type: PL/SQL Function Returning Boolean | Body: return segur
 
 Resultado: As "pontes" estão a apontar para o nosso novo pacote de segurança. Nenhuma alteração é visível aqui, mas a lógica interna é agora muito mais robusta.
 3.5. Alinhamento Final da Segurança
+**Status:** Concluído.
+
 Este passo mantém-se inalterado e é fundamental.
 
 Vá a Shared Components > Security Attributes.
@@ -227,6 +247,7 @@ Clique em Apply Changes.
 
 
 ### Com base na análise do documento "MATRIZ PASSAPORTE COMPETÊNCIAS DIGITAIS" e no nosso modelo de dados, preparei um script SQL completo para popular todas as tabelas da sua aplicação.
+**Status:** Concluído.
 
 ### Este script insere dados reais do programa (cursos, competências, etc.) e cria dados de teste realistas para as entidades operacionais (inscritos, turmas, matrículas). A ordem de inserção respeita as dependências entre as tabelas para evitar erros de integridade.
 
@@ -235,6 +256,7 @@ Clique em Apply Changes.
 ### 
 
 ### **Análise Crítica do Script SQL vs. Lições Aprendidas**
+**Status:** Concluído.
 
 **Lição 1: Um Script de "Insert" é Inútil. Um Script de "Reset" é Essencial.**
 
@@ -257,6 +279,7 @@ Clique em Apply Changes.
 * **Ação Corretiva:** O script deve ser completamente reescrito como um **bloco PL/SQL anónimo (`DECLARE...BEGIN...END;`)**. Esta é a única forma de implementar a sua aprendizagem: vamos declarar variáveis, inserir um registo "pai", capturar o seu ID real com a cláusula `RETURNING ID INTO variavel`, e usar essa variável para inserir os registos "filho".
 
 ### **Script SQL Revisto (Versão 2.0 \- Resiliente e Programático)**
+**Status:** Concluído.
 
 O script seguinte implementa todas as lições aprendidas. É um bloco PL/SQL que pode ser executado repetidamente para limpar e repopular os dados de teste da sua aplicação de forma segura e consistente.
 
@@ -537,6 +560,7 @@ Peço as minhas sinceras desculpas. A falha foi minha. O resultado de "no data f
 Analisei o comportamento e identifiquei o problema.
 
 ### **Diagnóstico do Erro**
+**Status:** Concluído.
 
 O meu script anterior foi mal concebido: ele assumia que algumas tabelas de "configuração" (como a lista de Cursos na tabela `CURSOS` e os formulários na tabela `CONFIGURACOES_FORMULARIO`) já tinham sido populadas anteriormente.
 
@@ -551,6 +575,7 @@ O que aconteceu foi o seguinte:
 O resultado final foi uma execução que não parou a meio, mas que no fim reverteu tudo, deixando as tabelas vazias. Daí o "no data found".
 
 ### **A Solução: O Script Definitivo e Autossuficiente**
+**Status:** Concluído.
 
 A solução é fornecer um único script que não assume absolutamente nada. Este novo script irá:
 
@@ -839,6 +864,7 @@ Desta vez, o resultado deverá ser a lista dos 3 cidadãos de teste. Se assim fo
 O script que preparámos era funcional, mas uma análise mais aprofundada revela que podemos elevá-lo a um nível superior de robustez e profissionalismo, alinhando-o de forma ainda mais estrita com as lições que definimos.
 
 ### **Análise Crítica do Script de Inserção de Dados**
+**Status:** Concluído.
 
 A análise focou-se em encontrar pontos de fragilidade que, embora pudessem não causar um erro imediato, violam os princípios de um bom script de desenvolvimento.
 
@@ -860,6 +886,7 @@ A análise focou-se em encontrar pontos de fragilidade que, embora pudessem não
 Esta abordagem torna o script extremamente resiliente e profissional.
 
 ### **Script SQL Revisto (Versão 4.0 \- Resiliente e Idempotente)**
+**Status:** Concluído.
 
 O script seguinte implementa todas estas melhorias. É agora uma ferramenta de desenvolvimento robusta que pode ser executada a qualquer momento para reiniciar o estado operacional da aplicação sem destruir a sua configuração base.
 
@@ -1071,12 +1098,14 @@ END;
 
 
 # **Lições Aprendidas: A Arte de Criar Dados de Teste para a Aplicação**
+**Status:** Concluído.
 
 A nossa jornada para popular a base de dados com dados de teste realistas foi um microcosmo do próprio processo de desenvolvimento de software: um ciclo de tentativa, erro, diagnóstico e refinamento. As dificuldades que encontrámos não foram falhas, mas sim aulas práticas que nos ensinaram lições fundamentais sobre como interagir com uma base de dados relacional de forma robusta.
 
 Se tivermos de o fazer novamente no futuro, estas são as nossas novas diretrizes:
 
 ### **Lição 1: Um Script de "Insert" é Inútil. Um Script de "Reset" é Essencial.**
+**Status:** Concluído.
 
 A nossa primeira tentativa, com um simples script de inserção, falhou logo à segunda execução com o erro de "chave única violada" (ORA-00001).
 
@@ -1084,6 +1113,7 @@ A nossa primeira tentativa, com um simples script de inserção, falhou logo à 
 * A Aprendizagem: A ferramenta fundamental não é um script de inserção, mas sim um script de reset. Este deve sempre começar por uma fase de limpeza (DELETE), seguida por uma fase de inserção (INSERT). Esta é a única forma de garantir a repetibilidade, que é a base de qualquer bom processo de teste.
 
 ### **Lição 2: A Ordem Importa – Respeitar a Hierarquia dos Dados.**
+**Status:** Concluído.
 
 Quando introduzimos os comandos DELETE, deparámo-nos com uma cascata de erros de "restrição de integridade" (ORA-02291).
 
@@ -1093,6 +1123,7 @@ Quando introduzimos os comandos DELETE, deparámo-nos com uma cascata de erros d
   * Para inserir: Começamos pelos "avós" e descemos até aos "netos". A ordem de INSERT segue a hierarquia natural dos dados.
 
 ### **Lição 3: Nem Todos os Dados São Iguais – Isolar a Configuração.**
+**Status:** Concluído.
 
 Mesmo com a ordem correta, continuámos a ter erros. A causa foi a nossa tentativa de apagar e recriar tabelas como TIPOS\_DE\_QUALIFICACAO e TIPOS\_DE\_ACAO.
 
@@ -1100,6 +1131,7 @@ Mesmo com a ordem correta, continuámos a ter erros. A causa foi a nossa tentati
 * A Aprendizagem: Um bom script de reset deve ser cirúrgico. Ele deve focar-se em apagar e recriar apenas os dados dinâmicos e operacionais (Inscritos, Turmas, Matrículas, etc.). Os dados de configuração devem ser populados uma única vez, idealmente no script de criação de tabelas, e depois deixados em paz.
 
 ### **Lição 4: A Regra de Ouro – Nunca Assumir os IDs.**
+**Status:** Concluído.
 
 O nosso maior obstáculo e a lição mais importante. Os nossos scripts falhavam consistentemente porque estávamos a usar IDs "hardcoded" (ex: INSERT ... VALUES (1, ...)), mas a base de dados, após a limpeza, não recomeçava necessariamente a contagem dos IDs a partir do 1\.
 

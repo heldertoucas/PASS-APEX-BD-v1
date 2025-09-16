@@ -1,8 +1,10 @@
 ### **Guia Detalhado e Consolidado: Passo 5 - O Funil de Entrada Inteligente**
+**Status:** Concluído.
 
 **Objetivo:** Construir o fluxo de trabalho para o Técnico processar novas pré-inscrições, com validações automáticas para evitar a duplicação de cidadãos no sistema.
 
 #### **5.1. Reconstruir a Página Principal (O "Caixote de Entrada" do Técnico)**
+**Status:** Concluído.
 
 Para garantir uma base limpa e incorporar as melhorias de UX que planeámos, vamos (re)criar a página de relatório, assegurando que ela está otimizada desde o início.
 
@@ -36,6 +38,7 @@ Para garantir uma base limpa e incorporar as melhorias de UX que planeámos, vam
 4. Clique em **Create Page**.
 
 #### **5.2. Configurar a Página de Relatório**
+**Status:** Concluído.
 
 Agora vamos aplicar as configurações de segurança, navegação e formatação.
 
@@ -66,6 +69,7 @@ Agora vamos aplicar as configurações de segurança, navegação e formatação
    * Para tornar a vista permanente, clique em **Actions > Report > Save Report > As Default Report Settings > Primary > Apply**.
 
 #### **5.3. Criar a Página de Processamento (O "Formulário Inteligente")**
+**Status:** Concluído.
 
 Esta página modal será o "cérebro" da operação.
 
@@ -77,6 +81,7 @@ Esta página modal será o "cérebro" da operação.
 6. **Ponto Crítico:** Após a criação, vá ao Page Designer e crie manualmente um item de página do tipo **Hidden** chamado **`P22_ID_PRE_INSCRICAO`** (use o número correto da sua página). Este passo é crucial e resolveu um dos nossos erros anteriores.
 
 #### **5.4. Adicionar a "Inteligência": Lógica de Verificação e Pré-preenchimento**
+**Status:** Concluído.
 
 Este processo é o coração da funcionalidade, agora atualizado com todas as correções que descobrimos.
 
@@ -141,6 +146,7 @@ Este processo é o coração da funcionalidade, agora atualizado com todas as co
      ```
 
 #### **5.5. Configurar a Interface: Botões Condicionais e Processo Final**
+**Status:** Concluído.
 
 1. **Botões Condicionais:**
    * No Page Designer da página modal, crie o item escondido `P22_MODO`.
@@ -161,16 +167,19 @@ Este processo é o coração da funcionalidade, agora atualizado com todas as co
    * **Server-Side Condition:** Configure a condição para ser do tipo **`Request is contained in Value List`** com o **Value:** `CREATE,SAVE`.
 
 #### **5.6. Testar o Fluxo Inteligente Completo**
+**Status:** Concluído.
 
 (O procedimento de teste permanece o mesmo do guião anterior, agora com a confiança de que a implementação está robusta).
 
 ---
 
 ### **5.7. Otimização: Processamento de Pré-inscrições em Série (Batch)**
+**Status:** Concluído.
 
 Depois de implementar o fluxo para uma única pré-inscrição, o próximo passo lógico é otimizar o trabalho do Técnico, permitindo-lhe validar e converter múltiplas pré-inscrições "novas" de uma só vez.
 
 **Análise Crítica do Plano Proposto**
+**Status:** Concluído.
 
 *   **Ponto Forte:** O plano utilizava corretamente as funcionalidades modernas do APEX para a interface (Row Selection) e tentava usar uma abordagem baseada em conjuntos (`INSERT...SELECT`), o que é bom em termos de intenção.
 *   **Erro Crítico na Lógica (Violação da Regra de Negócio):**
@@ -183,10 +192,12 @@ Depois de implementar o fluxo para uma única pré-inscrição, o próximo passo
 ---
 
 ### **Plano de Ação Revisto e Melhorado**
+**Status:** Concluído.
 
 O plano revisto utiliza uma abordagem PL/SQL mais explícita e profissional que é, ao mesmo tempo, mais eficiente e, mais importante, **logicamente correta**. Este método garante que apenas as pré-inscrições que são verdadeiramente novas são processadas e atualizadas.
 
 #### **Parte A: Preparar a Interface do Utilizador**
+**Status:** Concluído.
 
 Esta parte do plano original estava correta e mantém-se:
 
@@ -194,6 +205,7 @@ Esta parte do plano original estava correta e mantém-se:
 2.  **Adicionar o Botão de Ação:** Crie um botão na região do relatório com o nome `VALIDAR_SELECIONADOS` e a ação `Submit Page`.
 
 #### **Parte B: Implementar a Lógica de Processamento (Versão Corrigida)**
+**Status:** Concluído.
 
 Esta é a parte que foi completamente reescrita para garantir a correção e eficiência.
 

@@ -1,8 +1,10 @@
 ### **Guia Integral e Definitivo (Versão 4.0 \- Consolidada): Passo 4 \- A Sala de Controlo do Coordenador**
+**Status:** Concluído.
 
 **Objetivo:** Construir uma interface de gestão centralizada, segura, robusta e editável para o Coordenador, permitindo-lhe gerir todas as tabelas de base do sistema (como a lista de cursos, competências, etc.).
 
 **Estratégia: A Arquitetura "Hub & Spoke" Melhorada**
+**Status:** Concluído.
 
 Para manter a aplicação limpa e organizada, usaremos um padrão de design profissional chamado "Hub & Spoke" (Centro e Raios).
 
@@ -14,6 +16,7 @@ Esta abordagem evita um menu de navegação com dezenas de links, tornando a exp
 ---
 
 #### **4.1. Criar a Página "Hub" (O Centro da Roda)**
+**Status:** Concluído.
 
 (Esta secção permanece inalterada, pois a sua implementação foi direta e sem problemas.)
 
@@ -35,6 +38,7 @@ Esta abordagem evita um menu de navegação com dezenas de links, tornando a exp
 **Resultado:** Acabámos de criar a nossa página "Hub", que só será visível para utilizadores com o perfil de Coordenador.
 
 #### **4.2. Criar a Primeira Página "Spoke" (Gestão de Cursos)**
+**Status:** Concluído.
 
 Agora, vamos criar a nossa primeira página de gestão. Usaremos o componente **Interactive Grid**.
 
@@ -57,6 +61,7 @@ Agora, vamos criar a nossa primeira página de gestão. Usaremos o componente **
 ---
 
 ##### **4.2.1. Garantir que a Grelha é Editável (Passo Essencial)**
+**Status:** Concluído.
 
 Após criar uma grelha interativa, é uma boa prática verificar sempre duas configurações que garantem a sua funcionalidade de edição.
 
@@ -80,6 +85,7 @@ Após criar uma grelha interativa, é uma boa prática verificar sempre duas con
 ---
 
 #### **4.3. Implementar a Lógica de Navegação Melhorada**
+**Status:** Concluído.
 
 Agora vamos ligar o "Hub" ao "Spoke" com a configuração robusta que descobrimos ser necessária.
 
@@ -120,6 +126,7 @@ Agora vamos ligar o "Hub" ao "Spoke" com a configuração robusta que descobrimo
 3. Clique em **Save**.
 
 #### **4.4. Testar, Expandir e Diagnosticar**
+**Status:** Concluído.
 
 1. **Testar:** Faça login como `COORD_TESTE`. Verifique se consegue navegar para a página `Gestão de Cursos` e se consegue **editar** os dados (ex: clicando duas vezes numa célula). Tente fazer login como `TECNICO_TESTE` e confirme que o menu "Central de Configurações" não aparece.  
      
@@ -143,6 +150,7 @@ Agora vamos ligar o "Hub" ao "Spoke" com a configuração robusta que descobrimo
      1. Execute a checklist do passo 4.2.1: verifique o interruptor "Edit \> Enabled" nos "Attributes" da grelha e o campo "Primary Key Column" na "Source" da região.
 
 #### **4.5. Expandindo a Sala de Controlo: Outras Páginas de Gestão**
+**Status:** Concluído.
 
 Com a página "Gestão de Cursos" como modelo, pode agora expandir a "Sala de Controlo" do Coordenador criando páginas de gestão para as restantes tabelas de catálogo e de lookup. O processo é o mesmo:
 

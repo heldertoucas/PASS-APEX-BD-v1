@@ -1,18 +1,22 @@
 ### **Guia Detalhado (Rev. 2.0): Passo 2 \- A Estrutura Central (Modelo de Dados Completo)**
+**Status:** Concluído.
 
 **Objetivo:** Transformar o "Modelo de Dados v4.0" numa estrutura de base de dados física e íntegra. Este passo é o coração técnico do projeto; é aqui que construímos o "esqueleto" que irá suportar todas as jornadas de utilizador, desde a gestão do Coordenador até à "Cerimónia de Finalização" do Formando.
 
 #### **Visão Geral da Tarefa**
+**Status:** Concluído.
 
 A tarefa consiste em executar um script SQL abrangente no seu Workspace APEX. Este script irá criar todas as tabelas, inserir os dados de base essenciais e estabelecer as relações que garantem a integridade e a lógica do sistema, conforme definido no seu modelo de dados.
 
 #### **Preparação: O Script de Criação (DDL \- Data Definition Language)**
+**Status:** Concluído.
 
 O sucesso deste passo depende de um script SQL bem organizado. O script fornecido está estruturado em quatro partes lógicas para garantir uma execução sem erros.
 
 * **Dica de Boas Práticas:** Copie o script para um editor de texto ou um IDE de base de dados (como o VS Code com extensões Oracle ou o SQL Developer). Não o modifique diretamente no navegador. Guarde este ficheiro no seu sistema de controlo de versões (ex: Git) como `V1__Create_Initial_Schema.sql`. Isto é crucial para o historial do seu projeto.
 
 #### **Execução: Como Correr o Script no Oracle APEX**
+**Status:** Concluído.
 
 1. **Aceda ao seu Workspace APEX** com as credenciais de administrador.  
 2. Navegue para **SQL Workshop** \> **SQL Scripts**.  
@@ -21,6 +25,7 @@ O sucesso deste passo depende de um script SQL bem organizado. O script fornecid
 5. Clique em **Run** e, na página seguinte, em **Run Now** para iniciar a execução.
 
 #### **Verificação: Confirmar o Sucesso da Operação**
+**Status:** Concluído.
 
 1. **Analisar o Log de Execução:** Na página de resultados, verifique o resumo. Deverá ver "statements processed" com "0 errors". Este é o seu primeiro indicador de sucesso.  
 2. **Exploração Detalhada no Object Browser:**  
@@ -30,6 +35,7 @@ O sucesso deste passo depende de um script SQL bem organizado. O script fornecid
    * **Verifique os Dados Base:** Clique na tabela `TIPOS_ESTADO_TURMA` e aceda ao separador **Data**. Deverá ver os registos que foram inseridos pelo script ('Planeada', 'Em Curso', etc.).
 
 #### **Troubleshooting Comum**
+**Status:** Concluído.
 
 * **Erro "Table or view does not exist":** Este erro ocorre geralmente se tentar executar o script uma segunda vez sem apagar as tabelas da primeira execução. Para recomeçar, pode usar o utilitário "SQL Scripts", selecionar o seu script, e no menu "Actions" escolher "Drop".  
 * **Erro "unique constraint violated":** Acontece se tentar inserir dados duplicados em colunas com `UNIQUE`. Verifique os seus `INSERT` se modificou o script.
@@ -39,6 +45,7 @@ O sucesso deste passo depende de um script SQL bem organizado. O script fornecid
 ---
 
 ### **2\. Avaliação Crítica do Script SQL**
+**Status:** Concluído.
 
 O script original era funcional, mas uma análise crítica revela um ponto de fragilidade significativo e algumas áreas que beneficiam de clarificação.
 
@@ -64,6 +71,7 @@ O script original era funcional, mas uma análise crítica revela um ponto de fr
    * **Justificação:** Este é o comportamento mais lógico para manter a base de dados limpa. Se a "entidade-mãe" (a turma) deixa de existir, os seus "filhos" (as sessões, as matrículas) não têm razão para continuar a existir. Esta é a interpretação correta do modelo, mas é uma regra de negócio importante que deve ser validada.
 
 ### **3\. Script SQL Integral e Revisto (Versão 2.0)**
+**Status:** Concluído.
 
 #### Princípio de Design: Integridade do Modelo de Dados
 
