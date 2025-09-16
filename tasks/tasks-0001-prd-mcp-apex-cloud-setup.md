@@ -30,12 +30,12 @@
   - [x] 3.3 Update the `ORACLE_HOME` export in the `~/.zshrc` file to point to the new `instantclient_arm64` directory.
   - [x] 3.4 Apply the changes to the current shell session using `source ~/.zshrc`.
 
-- [ ] 4.0 Configure MCP Servers and Project Context
+- [x] 4.0 Configure MCP Servers and Project Context
   - [x] 4.1 Verify the `oracle-sqlcl` and `apex-custom` server definitions in `~/.gemini/settings.json` are correct and point to the right executables and environment variables (including `TNS_ADMIN`).
   - [x] 4.2 Verify the `GEMINI.md` file contains the correct, specific details for the target cloud APEX application.
 
 - [ ] 5.0 Launch and Verify the Full MCP Environment
-  - [ ] 5.1 Start the `oracle-sqlcl` MCP server as a background process.
-  - [ ] 5.2 Start the `apex-custom` Python MCP server as a background process.
-  - [ ] 5.3 Run the `/mcp` command in a new Gemini CLI terminal to confirm both servers show a `Ready` or `Connected` status.
+  - [x] 5.1 Start the `oracle-sqlcl` MCP server as a background process.
+  - [x] 5.2 Start the `apex-custom` Python MCP server as a background process.
+  - [x] 5.3 Run the `/mcp` command in a new Gemini CLI terminal to confirm both servers show a `Ready` or `Connected` status.
   - [ ] 5.4 As a final verification, run the prompt "List all APEX applications" to confirm the connection to the cloud database and APEX workspace is successful.

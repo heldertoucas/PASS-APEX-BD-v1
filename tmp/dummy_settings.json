@@ -19,7 +19,8 @@
       "args": ["/Users/helder/PASS-APEX-BD-v1/oracle-apex-mcp/mcp-servers/apex-server.py"],
       "cwd": "/Users/helder/PASS-APEX-BD-v1/oracle-apex-mcp",
       "env": {
-        "TNS_ADMIN": "/Users/helder/lib/oracle/wallets/Wallet_QIK84H5RGWHO9EL0"
+        "TNS_ADMIN": "/Users/helder/lib/oracle/wallets/Wallet_QIK84H5RGWHO9EL0",
+        "DB_PASSWORD": "YourSecurePassword123!"
       },
       "timeout": 30000
     }
