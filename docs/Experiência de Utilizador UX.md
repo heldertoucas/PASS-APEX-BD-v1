@@ -24,7 +24,7 @@ A aplicação materializa-se através das jornadas interligadas destes quatro pe
 
 ##### **A. A Jornada do Coordenador (A Visão Estratégica)**
 
-O Coordenador utiliza a aplicação para construir e supervisionar o programa.
+Um **Coordenador**, como o utilizador **"Coordenador Teste"**, utiliza a aplicação para construir e supervisionar o programa.
 
 1. **Fase de Configuração:** O Coordenador acede a um "back-office" de gestão de catálogos para "mobilar" a aplicação. É aqui que ele define:  
      
@@ -41,8 +41,12 @@ O Coordenador utiliza a aplicação para construir e supervisionar o programa.
    
 
 2. **Fase de Supervisão (Futuro):** O Coordenador acede a um dashboard principal com métricas e gráficos que lhe dão o pulso do programa em tempo real: número de inscritos, turmas ativas, taxa de conclusão, etc.  
+
+> **Nota de Implementação:** Esta funcionalidade está planeada para uma futura iteração. A implementação atual foca-se nas jornadas operacionais.  
      
 3. **Fase de Análise (Futuro):** O Coordenador gera relatórios detalhados para analisar o impacto do programa, cruzar dados demográficos com o sucesso na formação e preparar reportes para entidades superiores.
+
+> **Nota de Implementação:** Esta funcionalidade está planeada para uma futura iteração. A implementação atual foca-se nas jornadas operacionais.
 
 ##### **B. A Jornada do Técnico (O Fluxo Operacional)**
 
@@ -50,15 +54,13 @@ O Técnico é o utilizador mais frequente da aplicação, garantindo que a "máq
 
 1. **Fase 1: Funil de Entrada (Onboarding do Cidadão):**  
      
-   * O Técnico inicia o seu dia na página  
-     **"Novas Pré-Inscrições"**, que funciona como a sua caixa de entrada de trabalho. As pré-inscrições incluem informação sobre quais os cursos nos quais os interessados pretendem inscrever-se e informações de diagnóstico sobre as suas competências digitais.  
+   * Um **Técnico**, como o **"Técnico Teste"**, inicia o seu dia na página **"Novas Pré-Inscrições"**. Esta página é a sua caixa de entrada, mostrando, por exemplo, as novas submissões de **"Joana Silva (Teste Novo)"** e **"Maria Martins (Teste Duplicado)"**.
        
-   * Ao clicar numa pré-inscrição, a aplicação abre um assistente inteligente que  
-     **verifica automaticamente se o cidadão já existe** na base de dados (pelo NIF ou email) e se já realizou algum dos cursos nos quais se inscreve.  
+   * Ao clicar na pré-inscrição de **"Joana Silva"**, o assistente inteligente verifica que o seu NIF (444555666) não existe na base de dados. O formulário de novo Inscrito é então pré-preenchido com os dados dela.
+   
+   * No entanto, ao clicar na pré-inscrição de **"Maria Martins"**, o sistema deteta que o seu NIF (123456789) já corresponde a um registo existente ("Maria Lúcia Martins"). Em vez de criar um duplicado, a aplicação carrega o perfil existente de Maria para que o técnico possa verificar os dados e atualizar os seus interesses.
        
-   * Se o cidadão for novo, o formulário de Inscritos é pré-preenchido, incluindo a informação sobre os cursos nos quais se inscreve. Se já existir, os dados são carregados para atualização, evitando duplicados e o cidadão é apenas inscrito nos cursos validados pelo técnico.  
-       
-   * Com um clique, o Técnico conclui o perfil do Inscrito, que passa a estar "Ativo" no sistema, e a pré-inscrição original é arquivada. A informação sobre os cursos nos quais o cidadão se inscreve é atualizada e passa a estar disponível.
+   * Com um clique, o Técnico conclui o perfil do novo Inscrito (Joana), que passa a estar "Ativo", e a pré-inscrição original é arquivada. No caso de Maria, o técnico apenas atualiza o seu registo.
 
    
 
@@ -96,20 +98,20 @@ O Técnico é o utilizador mais frequente da aplicação, garantindo que a "máq
 
 **C. A Jornada do Formador (A Interação em Sala e Fora Dela)**
 
-O Formador interage com a aplicação de forma focada e pragmática. A ferramenta deve ser um aliado que simplifica a burocracia para que ele se possa concentrar no que faz de melhor: provocar aprendizagens.
+Um **Formador**, como o **"Formador Teste"**, interage com a aplicação de forma focada e pragmática. A ferramenta deve ser um aliado que simplifica a burocracia para que ele se possa concentrar no que faz de melhor: provocar aprendizagens.
 
-* **Fase de Preparação:** O Formador acede ao seu portal, "As Minhas Turmas". Para cada turma, a aplicação funciona como o seu "cockpit", apresentando:  
+* **Fase de Preparação:** O **"Formador Teste"** acede ao seu portal, "As Minhas Turmas". Para a turma **"PCD-C1-Marvila-01"**, a aplicação funciona como o seu "cockpit", apresentando:  
     
-  * **A Lista de Formandos:** Com contactos e notas relevantes.  
-  * **O Calendário de Sessões:** Com acesso rápido a cada aula.  
+  * **A Lista de Formandos:** Incluindo **"Maria Lúcia Martins"** e **"Carlos Miguel Ferreira"**.  
+  * **O Calendário de Sessões:** Com acesso rápido a cada aula, como a "Sessão 1" de 08/09/2025.  
   * **O Repositório de Recursos:** Links diretos para os materiais pedagógicos.  
   * **Check-list de Preparação:** Um guia simples para garantir que nada falha.
 
 
-* **Fase de Execução (Registo da Sessão):** No final de cada sessão, o momento crítico. A aplicação oferece flexibilidade máxima:  
+* **Fase de Execução (Registo da Sessão):** No final da "Sessão 1", o momento crítico. A aplicação oferece flexibilidade máxima:  
     
-  * O Formador acede à página de registo de presenças através do seu portal, de um **link direto** ou de um **QRCode**, permitindo um acesso instantâneo nos seus dispositivos.  
-  * A interface é uma grelha limpa e rápida. Com poucos cliques, marca **Presentes, Ausentes ou Faltas Justificadas**.  
+  * O **"Formador Teste"** acede à página de registo de presenças através do seu portal, de um **link direto** ou de um **QRCode**, permitindo um acesso instantâneo nos seus dispositivos.  
+  * A interface é uma grelha limpa e rápida. Com poucos cliques, marca **"Maria Lúcia Martins"** como "Presente" e **"Carlos Miguel Ferreira"** como "Ausente".  
   * Na mesma página, preenche o **Sumário** da sessão, descrevendo as atividades e competências abordadas, e adiciona observações pertinentes. Um clique em "Guardar" submete tudo de uma só vez.
 
 
@@ -126,7 +128,7 @@ Durante o curso, a secção Gestão do Dossier Técnico-Pedagógico está dispon
 
 **D. A Jornada do Formando (A Experiência Central e de Reconhecimento)**
 
-Esta é a jornada mais importante, a experiência do cidadão. Deve ser fluida, encorajadora e culminar num sentimento de conquista.
+Esta é a jornada mais importante, a experiência de uma cidadã como a **"Maria Lúcia Martins"**. Deve ser fluida, encorajadora e culminar num sentimento de conquista.
 
 * **Fase de Descoberta:** O cidadão encontra o programa online ou num balcão de atendimento e manifesta o seu interesse ao preencher um formulário de Pre\_Inscricoes.  
     
@@ -157,6 +159,8 @@ Esta é a jornada mais importante, a experiência do cidadão. Deve ser fluida, 
 * **Fase de Reconhecimento:** Ao concluir um curso com sucesso, e executar todas as etapas da "Cerimónia de Finalização", o sistema regista esta conquista (`Matriculas.Estado = 'Concluído com Sucesso'`).  
     
 * **Fase de Autonomia (Futuro):** O formando acede a um Portal Pessoal online. Nesta área reservada, ele pode:  
+
+> **Nota de Implementação:** A criação do Portal do Formando é uma funcionalidade majoritária planeada para uma futura versão. As colunas para suportar esta funcionalidade (ex: `URL_CERTIFICADO_CONCLUSAO`) existem na base de dados, mas a interface e a lógica de negócio ainda não estão implementadas.  
     
   * Visualizar o seu "Passaporte Competências Digitais": uma galeria visual com todos os badges que já conquistou.  
   * Clicar num badge para ver os detalhes da competência e aceder ao link do Open Badge (`linkBadgeLCA`).  

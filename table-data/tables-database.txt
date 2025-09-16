@@ -1,0 +1,228 @@
+-- =======================================================
+-- Table: BADGES_ATRIBUIDOS
+-- =======================================================
+{"ID_BADGE_ATRIBUIDO":1,"ID_INSCRITO":1,"ID_COMPETENCIA":1,"ID_MATRICULA_ORIGEM":1,"DATA_DE_EMISSAO":"2025-08-05T17:31:09.160167Z","URL_CERTIFICADO":null}
+-- =======================================================
+-- Table: COMPETENCIAS
+-- =======================================================
+{"ID_COMPETENCIA":1,"NOME":"Utilizar o Computador, o Tablet e o Telemóvel","DESCRICAO":"Aprender a Utilizar o Computador, o Tablet e o Telemóvel","ID_AREA_COMPETENCIA":5,"ID_NIVEL_PROFICIENCIA":1,"URL_MEDALHA_DIGITAL":null,"URL_ICONE_BADGE":null}
+{"ID_COMPETENCIA":2,"NOME":"Cidadania Digital e Serviços Públicos Online","DESCRICAO":"Utilizar os Serviços Públicos Online e Exercer Cidadania Digital","ID_AREA_COMPETENCIA":2,"ID_NIVEL_PROFICIENCIA":2,"URL_MEDALHA_DIGITAL":null,"URL_ICONE_BADGE":null}
+-- =======================================================
+-- Table: CONFIGURACOES_FORMULARIO
+-- =======================================================
+{"ID_CONFIGURACAO":1,"NOME":"Avaliação de Curso Padrão V1","TIPO_FORMULARIO":"Google Form","ID_FORMULARIO_EXTERNO":null,"URL_BASE":null,"MAPEAMENTO_CAMPOS":{"nome_curso": "entry.123"}}
+{"ID_CONFIGURACAO":2,"NOME":"Desafio Digital Final V1","TIPO_FORMULARIO":"Google Form","ID_FORMULARIO_EXTERNO":null,"URL_BASE":null,"MAPEAMENTO_CAMPOS":{"nome_inscrito": "entry.456"}}
+-- =======================================================
+-- Table: CURSOS
+-- =======================================================
+{"ID_CURSO":1,"ID_PROGRAMA":1,"NOME":"Inclusão Digital: Aprender a utilizar o Computador e o Telemóvel","ID_ESTADO_CURSO":2,"CARGA_HORARIA":15,"COMPETENCIAS_ASSOCIADAS":null,"MODALIDADE_FORMACAO":null,"FORMA_ORGANIZACAO":null,"PUBLICO_ALVO":"Todos os cidadãos adultos com pouco domínio de competências digitais.","OBJETIVOS_GERAIS":null,"OBJETIVOS_ESPECIFICOS":null,"CONTEUDOS_PROGRAMATICOS":null,"METODOLOGIA_AVALIACAO":null,"URL_MANUAL_DIGITAL":null}
+{"ID_CURSO":2,"ID_PROGRAMA":1,"NOME":"Inclusão Digital: Utilizar Serviços Públicos Online","ID_ESTADO_CURSO":2,"CARGA_HORARIA":15,"COMPETENCIAS_ASSOCIADAS":null,"MODALIDADE_FORMACAO":null,"FORMA_ORGANIZACAO":null,"PUBLICO_ALVO":"Todos os cidadãos adultos com pouco domínio de competências digitais.","OBJETIVOS_GERAIS":null,"OBJETIVOS_ESPECIFICOS":null,"CONTEUDOS_PROGRAMATICOS":null,"METODOLOGIA_AVALIACAO":null,"URL_MANUAL_DIGITAL":null}
+-- =======================================================
+-- Table: DESAFIOS_TURMA
+-- =======================================================
+-- =======================================================
+-- Table: DOSSIER_SUBMISSOES
+-- =======================================================
+-- =======================================================
+-- Table: EQUIPAMENTOS_ALOCADOS
+-- =======================================================
+-- =======================================================
+-- Table: HTMLDB_PLAN_TABLE
+-- =======================================================
+-- Error processing table HTMLDB_PLAN_TABLE: ORA-40654: Input to JSON generation function has unsupported data type.
+-- =======================================================
+-- Table: INSCRITOS
+-- =======================================================
+{"ID_INSCRITO":1,"NOME_COMPLETO":"Maria Lúcia Martins","EMAIL":"maria.l.martins@email.com","CONTACTO_TELEFONICO":null,"NIF":123456789,"DATA_NASCIMENTO":null,"ID_GENERO":null,"NATURALIDADE":null,"NACIONALIDADE":null,"ID_TIPO_DOC_IDENTIFICACAO":null,"DOC_IDENTIFICACAO_NUM":null,"VALIDADE_DOC_IDENTIFICACAO":null,"MORADA":null,"CODIGO_POSTAL":null,"LOCALIDADE_CODIGO_POSTAL":null,"ID_SITUACAO_PROFISSIONAL":null,"ID_QUALIFICACAO":null,"CONSENTIMENTO_RGPD":"N","ID_ESTADO_GERAL_INSCRITO":1,"INTERESSES_INICIAIS":null,"ORIGEM_INSCRICAO":null,"OBSERVACOES":null,"DATA_CRIACAO":"2025-08-05T17:31:09.013856Z"}
+{"ID_INSCRITO":2,"NOME_COMPLETO":"Carlos Miguel Ferreira","EMAIL":"carlos.ferreira@email.com","CONTACTO_TELEFONICO":null,"NIF":234567890,"DATA_NASCIMENTO":null,"ID_GENERO":null,"NATURALIDADE":null,"NACIONALIDADE":null,"ID_TIPO_DOC_IDENTIFICACAO":null,"DOC_IDENTIFICACAO_NUM":null,"VALIDADE_DOC_IDENTIFICACAO":null,"MORADA":null,"CODIGO_POSTAL":null,"LOCALIDADE_CODIGO_POSTAL":null,"ID_SITUACAO_PROFISSIONAL":null,"ID_QUALIFICACAO":null,"CONSENTIMENTO_RGPD":"N","ID_ESTADO_GERAL_INSCRITO":1,"INTERESSES_INICIAIS":null,"ORIGEM_INSCRICAO":null,"OBSERVACOES":null,"DATA_CRIACAO":"2025-08-05T17:31:09.015996Z"}
+{"ID_INSCRITO":3,"NOME_COMPLETO":"Ana Sofia Pereira","EMAIL":"ana.s.pereira@email.com","CONTACTO_TELEFONICO":null,"NIF":345678901,"DATA_NASCIMENTO":null,"ID_GENERO":null,"NATURALIDADE":null,"NACIONALIDADE":null,"ID_TIPO_DOC_IDENTIFICACAO":null,"DOC_IDENTIFICACAO_NUM":null,"VALIDADE_DOC_IDENTIFICACAO":null,"MORADA":null,"CODIGO_POSTAL":null,"LOCALIDADE_CODIGO_POSTAL":null,"ID_SITUACAO_PROFISSIONAL":null,"ID_QUALIFICACAO":null,"CONSENTIMENTO_RGPD":"N","ID_ESTADO_GERAL_INSCRITO":1,"INTERESSES_INICIAIS":null,"ORIGEM_INSCRICAO":null,"OBSERVACOES":null,"DATA_CRIACAO":"2025-08-05T17:31:09.017194Z"}
+-- =======================================================
+-- Table: MATRICULAS
+-- =======================================================
+{"ID_MATRICULA":1,"ID_INSCRITO":1,"ID_TURMA":1,"ID_ESTADO_MATRICULA":3,"ID_NIVEL_EXPERIENCIA":null,"RESPOSTAS_DESAFIO_FINAL":null,"CLASSIFICACAO_DESAFIO_FINAL":null,"CLASSIFICACAO_FINAL":null,"TOTAL_HORAS_ASSISTIDAS":null,"AVALIACAO_DO_CURSO":null,"COMENTARIOS_AVALIACAO":null,"DATA_DE_INSCRICAO":"2025-08-05T17:31:09.136188Z","DATA_DE_CONCLUSAO":null,"URL_CERTIFICADO_CONCLUSAO":null}
+{"ID_MATRICULA":2,"ID_INSCRITO":2,"ID_TURMA":1,"ID_ESTADO_MATRICULA":2,"ID_NIVEL_EXPERIENCIA":null,"RESPOSTAS_DESAFIO_FINAL":null,"CLASSIFICACAO_DESAFIO_FINAL":null,"CLASSIFICACAO_FINAL":null,"TOTAL_HORAS_ASSISTIDAS":null,"AVALIACAO_DO_CURSO":null,"COMENTARIOS_AVALIACAO":null,"DATA_DE_INSCRICAO":"2025-08-05T17:31:09.138044Z","DATA_DE_CONCLUSAO":null,"URL_CERTIFICADO_CONCLUSAO":null}
+-- =======================================================
+-- Table: MODELOS_DE_COMUNICACAO
+-- =======================================================
+-- =======================================================
+-- Table: PRESENCAS
+-- =======================================================
+{"ID_PRESENCA":1,"ID_MATRICULA":1,"ID_SESSAO":1,"ID_ESTADO_PRESENCA":1,"HORAS_ASSISTIDAS":3,"ID_METODO_REGISTO":null,"DATA_REGISTO":"2025-08-05T17:31:09.148357Z"}
+{"ID_PRESENCA":2,"ID_MATRICULA":2,"ID_SESSAO":1,"ID_ESTADO_PRESENCA":2,"HORAS_ASSISTIDAS":0,"ID_METODO_REGISTO":null,"DATA_REGISTO":"2025-08-05T17:31:09.150099Z"}
+-- =======================================================
+-- Table: PRE_INSCRICOES
+-- =======================================================
+{"ID_PRE_INSCRICAO":2,"NOME_COMPLETO":"Maria Martins (Teste Duplicado)","EMAIL":"maria.martins.novo@email.com","CONTACTO_TELEFONICO":"919876543","NIF":123456789,"DATA_NASCIMENTO":"1958-07-22T00:00:00","CONSENTIMENTO_DADOS":"S","INTERESSES":{"cursos": [4], "experiencia": "média"},"DATA_SUBMISSAO":"2025-08-05T23:02:52.720353Z","ID_ESTADO_PRE_INSCRICAO":1}
+{"ID_PRE_INSCRICAO":1,"NOME_COMPLETO":"Joana Silva (Teste Novo)","EMAIL":"joana.silva.teste@email.com","CONTACTO_TELEFONICO":"911222333","NIF":444555666,"DATA_NASCIMENTO":"1985-05-15T00:00:00","CONSENTIMENTO_DADOS":"S","INTERESSES":{"cursos": [1], "experiencia": "pouca"},"DATA_SUBMISSAO":"2025-08-05T22:52:48.293398Z","ID_ESTADO_PRE_INSCRICAO":1}
+-- =======================================================
+-- Table: PROGRAMAS
+-- =======================================================
+{"ID_PROGRAMA":1,"NOME":"Passaporte Competências Digitais","DESCRICAO":"Resposta estratégica da Câmara Municipal de Lisboa ao fosso digital."}
+-- =======================================================
+-- Table: REGISTOS_DE_ACOES
+-- =======================================================
+-- =======================================================
+-- Table: SESSOES
+-- =======================================================
+{"ID_SESSAO":1,"NOME":"Sessão 1","ID_TURMA":1,"ID_FORMADORES_SESSAO":null,"DATA_SESSAO":"2025-09-08T00:00:00","HORA_INICIO":null,"HORA_FIM":null,"DURACAO_HORAS":3,"SUMARIO":null,"URL_RECURSOS_PEDAGOGICOS":null}
+-- =======================================================
+-- Table: TIPOS_AREA_COMPETENCIA
+-- =======================================================
+{"ID_AREA_COMPETENCIA":1,"NOME":"Literacia de Informação e Media","ORDEM_EXIBICAO":1}
+{"ID_AREA_COMPETENCIA":2,"NOME":"Comunicação e Colaboração","ORDEM_EXIBICAO":2}
+{"ID_AREA_COMPETENCIA":3,"NOME":"Criação de Conteúdos Digitais","ORDEM_EXIBICAO":3}
+{"ID_AREA_COMPETENCIA":4,"NOME":"Segurança","ORDEM_EXIBICAO":4}
+{"ID_AREA_COMPETENCIA":5,"NOME":"Resolução de Problemas","ORDEM_EXIBICAO":5}
+-- =======================================================
+-- Table: TIPOS_CATEGORIA_EQUIPAMENTO
+-- =======================================================
+{"ID_CATEGORIA_EQUIPAMENTO":1,"NOME":"Hardware","ORDEM_EXIBICAO":1}
+{"ID_CATEGORIA_EQUIPAMENTO":2,"NOME":"Software","ORDEM_EXIBICAO":2}
+{"ID_CATEGORIA_EQUIPAMENTO":3,"NOME":"Kit Pedagógico","ORDEM_EXIBICAO":3}
+-- =======================================================
+-- Table: TIPOS_DE_ACAO
+-- =======================================================
+{"ID_TIPO_DE_ACAO":1,"NOME":"Pré-inscrição Recebida","PALAVRA_CHAVE":"PRE_INSCRICAO_RECEBIDA","DESCRICAO":"Um novo formulário de interesse foi submetido."}
+{"ID_TIPO_DE_ACAO":2,"NOME":"Inscrição Criada","PALAVRA_CHAVE":"INSCRICAO_CRIADA","DESCRICAO":"Um perfil de inscrito foi criado no sistema."}
+{"ID_TIPO_DE_ACAO":3,"NOME":"Inscrição Atualizada","PALAVRA_CHAVE":"INSCRICAO_ATUALIZADA","DESCRICAO":"Os dados de um inscrito foram alterados."}
+{"ID_TIPO_DE_ACAO":4,"NOME":"Matrícula Criada","PALAVRA_CHAVE":"MATRICULA_CRIADA","DESCRICAO":"Um inscrito foi matriculado numa turma."}
+{"ID_TIPO_DE_ACAO":5,"NOME":"Estado da Matrícula Alterado","PALAVRA_CHAVE":"MATRICULA_ESTADO_ALTERADO","DESCRICAO":"O estado de uma matrícula foi alterado (ex: de \"\"Inscrito\"\" para \"\"A frequentar\"\")."}
+{"ID_TIPO_DE_ACAO":6,"NOME":"Convocatória Enviada","PALAVRA_CHAVE":"CONVOCATORIA_ENVIADA","DESCRICAO":"Uma comunicação (email) de convocatória foi enviada para uma turma."}
+{"ID_TIPO_DE_ACAO":7,"NOME":"Presenças Submetidas","PALAVRA_CHAVE":"PRESENCAS_SUBMETIDAS","DESCRICAO":"Um formador submeteu o registo de presenças para uma sessão."}
+{"ID_TIPO_DE_ACAO":8,"NOME":"Desafio Final Submetido","PALAVRA_CHAVE":"DESAFIO_FINAL_SUBMETIDO","DESCRICAO":"Um formando submeteu as suas respostas ao desafio digital final."}
+{"ID_TIPO_DE_ACAO":9,"NOME":"Avaliação de Satisfação Submetida","PALAVRA_CHAVE":"AVALIACAO_SATISFACAO_SUBMETIDA","DESCRICAO":"Um coordenador ou formador submeteu o seu relatório de avaliação de satisfação."}
+{"ID_TIPO_DE_ACAO":10,"NOME":"Início de Conquista de Badge","PALAVRA_CHAVE":"BADGE_CLAIM_STARTED","DESCRICAO":"O formando iniciou o processo de obtenção de um badge (ex: clicou no link)."}
+{"ID_TIPO_DE_ACAO":11,"NOME":"Badge Emitido","PALAVRA_CHAVE":"BADGE_EMITIDO","DESCRICAO":"Um badge foi oficialmente atribuído a um formando."}
+{"ID_TIPO_DE_ACAO":12,"NOME":"Certificado Emitido","PALAVRA_CHAVE":"CERTIFICADO_EMITIDO","DESCRICAO":"Um certificado de participação ou conclusão foi gerado."}
+{"ID_TIPO_DE_ACAO":13,"NOME":"Relatório Gerado","PALAVRA_CHAVE":"RELATORIO_GERADO","DESCRICAO":"Um utilizador gerou e/ou exportou um relatório do sistema."}
+-- =======================================================
+-- Table: TIPOS_DE_QUALIFICACAO
+-- =======================================================
+-- =======================================================
+-- Table: TIPOS_DOC_IDENTIFICACAO
+-- =======================================================
+{"ID_TIPO_DOC_IDENTIFICACAO":1,"NOME":"Cartão de Cidadão","ORDEM_EXIBICAO":1}
+{"ID_TIPO_DOC_IDENTIFICACAO":2,"NOME":"Bilhete de Identidade","ORDEM_EXIBICAO":2}
+{"ID_TIPO_DOC_IDENTIFICACAO":3,"NOME":"Passaporte","ORDEM_EXIBICAO":3}
+{"ID_TIPO_DOC_IDENTIFICACAO":4,"NOME":"Autorização de Residência","ORDEM_EXIBICAO":4}
+-- =======================================================
+-- Table: TIPOS_EQUIPAMENTO
+-- =======================================================
+-- =======================================================
+-- Table: TIPOS_ESTADO_ALOCACAO
+-- =======================================================
+{"ID_ESTADO_ALOCACAO":1,"NOME":"Requisitado","ORDEM_EXIBICAO":1}
+{"ID_ESTADO_ALOCACAO":2,"NOME":"Em Uso","ORDEM_EXIBICAO":2}
+{"ID_ESTADO_ALOCACAO":3,"NOME":"Devolvido","ORDEM_EXIBICAO":3}
+-- =======================================================
+-- Table: TIPOS_ESTADO_CURSO
+-- =======================================================
+{"ID_ESTADO_CURSO":1,"NOME":"Em Desenho","ORDEM_EXIBICAO":1}
+{"ID_ESTADO_CURSO":2,"NOME":"Ativo","ORDEM_EXIBICAO":2}
+{"ID_ESTADO_CURSO":3,"NOME":"Inativo","ORDEM_EXIBICAO":3}
+{"ID_ESTADO_CURSO":4,"NOME":"Obsoleto","ORDEM_EXIBICAO":4}
+-- =======================================================
+-- Table: TIPOS_ESTADO_DOSSIER
+-- =======================================================
+{"ID_ESTADO_DOSSIER":1,"NOME":"Pendente","ORDEM_EXIBICAO":1}
+{"ID_ESTADO_DOSSIER":2,"NOME":"Em Verificação","ORDEM_EXIBICAO":2}
+{"ID_ESTADO_DOSSIER":3,"NOME":"Completo","ORDEM_EXIBICAO":3}
+-- =======================================================
+-- Table: TIPOS_ESTADO_GERAL_INSCRITO
+-- =======================================================
+{"ID_ESTADO_GERAL_INSCRITO":1,"NOME":"Ativo","ORDEM_EXIBICAO":1}
+{"ID_ESTADO_GERAL_INSCRITO":2,"NOME":"Inativo","ORDEM_EXIBICAO":2}
+{"ID_ESTADO_GERAL_INSCRITO":3,"NOME":"Suspenso","ORDEM_EXIBICAO":3}
+-- =======================================================
+-- Table: TIPOS_ESTADO_MATRICULA
+-- =======================================================
+{"ID_ESTADO_MATRICULA":1,"NOME":"Inscrito","ORDEM_EXIBICAO":1}
+{"ID_ESTADO_MATRICULA":2,"NOME":"A frequentar","ORDEM_EXIBICAO":2}
+{"ID_ESTADO_MATRICULA":3,"NOME":"Concluído com Sucesso","ORDEM_EXIBICAO":3}
+{"ID_ESTADO_MATRICULA":4,"NOME":"Reprovado","ORDEM_EXIBICAO":4}
+{"ID_ESTADO_MATRICULA":5,"NOME":"Desistiu","ORDEM_EXIBICAO":5}
+-- =======================================================
+-- Table: TIPOS_ESTADO_PRESENCA
+-- =======================================================
+{"ID_ESTADO_PRESENCA":1,"NOME":"Presente","ORDEM_EXIBICAO":1}
+{"ID_ESTADO_PRESENCA":2,"NOME":"Ausente","ORDEM_EXIBICAO":2}
+{"ID_ESTADO_PRESENCA":3,"NOME":"Falta Justificada","ORDEM_EXIBICAO":3}
+-- =======================================================
+-- Table: TIPOS_ESTADO_PRE_INSCRICAO
+-- =======================================================
+{"ID_ESTADO_PRE_INSCRICAO":1,"NOME":"Nova","ORDEM_EXIBICAO":1}
+{"ID_ESTADO_PRE_INSCRICAO":2,"NOME":"Contactada","ORDEM_EXIBICAO":2}
+{"ID_ESTADO_PRE_INSCRICAO":3,"NOME":"Convertida em Inscrição","ORDEM_EXIBICAO":3}
+{"ID_ESTADO_PRE_INSCRICAO":4,"NOME":"Arquivada","ORDEM_EXIBICAO":4}
+-- =======================================================
+-- Table: TIPOS_ESTADO_SUBMISSAO
+-- =======================================================
+{"ID_ESTADO_SUBMISSAO":1,"NOME":"Pendente","ORDEM_EXIBICAO":1}
+{"ID_ESTADO_SUBMISSAO":2,"NOME":"Submetido","ORDEM_EXIBICAO":2}
+-- =======================================================
+-- Table: TIPOS_ESTADO_TURMA
+-- =======================================================
+{"ID_ESTADO_TURMA":1,"NOME":"Planeada","ORDEM_EXIBICAO":1}
+{"ID_ESTADO_TURMA":2,"NOME":"Aberta para Inscrições","ORDEM_EXIBICAO":2}
+{"ID_ESTADO_TURMA":3,"NOME":"Em Curso","ORDEM_EXIBICAO":3}
+{"ID_ESTADO_TURMA":4,"NOME":"Concluída","ORDEM_EXIBICAO":4}
+{"ID_ESTADO_TURMA":5,"NOME":"Cancelada","ORDEM_EXIBICAO":5}
+-- =======================================================
+-- Table: TIPOS_FUNCAO_TURMA
+-- =======================================================
+{"ID_FUNCAO_TURMA":1,"NOME":"Formador","ORDEM_EXIBICAO":1}
+{"ID_FUNCAO_TURMA":2,"NOME":"Coordenador","ORDEM_EXIBICAO":2}
+-- =======================================================
+-- Table: TIPOS_GENERO
+-- =======================================================
+{"ID_GENERO":1,"NOME":"Feminino","ORDEM_EXIBICAO":1}
+{"ID_GENERO":2,"NOME":"Masculino","ORDEM_EXIBICAO":2}
+{"ID_GENERO":3,"NOME":"Outro","ORDEM_EXIBICAO":3}
+{"ID_GENERO":4,"NOME":"Prefiro não indicar","ORDEM_EXIBICAO":4}
+-- =======================================================
+-- Table: TIPOS_METODO_REGISTO
+-- =======================================================
+{"ID_METODO_REGISTO":1,"NOME":"Manual","ORDEM_EXIBICAO":1}
+{"ID_METODO_REGISTO":2,"NOME":"QRCode","ORDEM_EXIBICAO":2}
+{"ID_METODO_REGISTO":3,"NOME":"Automático","ORDEM_EXIBICAO":3}
+-- =======================================================
+-- Table: TIPOS_NIVEL_EXPERIENCIA
+-- =======================================================
+{"ID_NIVEL_EXPERIENCIA":1,"NOME":"Iniciante","ORDEM_EXIBICAO":1}
+{"ID_NIVEL_EXPERIENCIA":2,"NOME":"Utilizador Casual","ORDEM_EXIBICAO":2}
+{"ID_NIVEL_EXPERIENCIA":3,"NOME":"Utilizador Frequente","ORDEM_EXIBICAO":3}
+{"ID_NIVEL_EXPERIENCIA":4,"NOME":"Avançado","ORDEM_EXIBICAO":4}
+-- =======================================================
+-- Table: TIPOS_NIVEL_PROFICIENCIA
+-- =======================================================
+{"ID_NIVEL_PROFICIENCIA":1,"NOME":"Básico","ORDEM_EXIBICAO":1}
+{"ID_NIVEL_PROFICIENCIA":2,"NOME":"Intermédio","ORDEM_EXIBICAO":2}
+{"ID_NIVEL_PROFICIENCIA":3,"NOME":"Avançado","ORDEM_EXIBICAO":3}
+-- =======================================================
+-- Table: TIPOS_NOTIFICACAO
+-- =======================================================
+{"ID_TIPO_NOTIFICACAO":1,"NOME":"Automática","ORDEM_EXIBICAO":1}
+{"ID_TIPO_NOTIFICACAO":2,"NOME":"Manual","ORDEM_EXIBICAO":2}
+-- =======================================================
+-- Table: TIPOS_SITUACAO_PROFISSIONAL
+-- =======================================================
+{"ID_SITUACAO_PROFISSIONAL":1,"NOME":"Empregado","ORDEM_EXIBICAO":1}
+{"ID_SITUACAO_PROFISSIONAL":2,"NOME":"Desempregado","ORDEM_EXIBICAO":2}
+{"ID_SITUACAO_PROFISSIONAL":3,"NOME":"Estudante","ORDEM_EXIBICAO":3}
+{"ID_SITUACAO_PROFISSIONAL":4,"NOME":"Reformado","ORDEM_EXIBICAO":4}
+-- =======================================================
+-- Table: TURMAS
+-- =======================================================
+{"ID_TURMA":1,"NOME":"PCD-C1-Marvila-01","ID_CURSO":1,"FORMADORES":"3","ID_COORDENADOR":1,"NUMERO_DA_TURMA":null,"ID_ESTADO_TURMA":4,"ID_ESTADO_DOSSIER":null,"DATA_INICIO":"2025-09-08T00:00:00","DATA_FIM":null,"LOCAL_FORMACAO":null,"HORARIO":null,"CALENDARIZACAO_TEXTO":null,"ESTRUTURA_SESSOES_TEXTO":null,"VAGAS":null,"TOTAL_INQUIRIDOS":null,"ID_CONFIG_AVALIACAO":1,"ID_CONFIG_DESAFIO_FINAL":2,"COMPETENCIAS_PARA_DESAFIO":null,"OBSERVACOES":null}
+{"ID_TURMA":2,"NOME":"PCD-C4-Lumiar-01","ID_CURSO":2,"FORMADORES":"7","ID_COORDENADOR":1,"NUMERO_DA_TURMA":null,"ID_ESTADO_TURMA":3,"ID_ESTADO_DOSSIER":null,"DATA_INICIO":"2025-09-15T00:00:00","DATA_FIM":null,"LOCAL_FORMACAO":null,"HORARIO":null,"CALENDARIZACAO_TEXTO":null,"ESTRUTURA_SESSOES_TEXTO":null,"VAGAS":null,"TOTAL_INQUIRIDOS":null,"ID_CONFIG_AVALIACAO":1,"ID_CONFIG_DESAFIO_FINAL":2,"COMPETENCIAS_PARA_DESAFIO":null,"OBSERVACOES":null}
+-- =======================================================
+-- Table: TURMA_COMPETENCIAS_LECIONADAS
+-- =======================================================
+-- =======================================================
+-- Table: UTILIZADORES
+-- =======================================================
+{"ID_UTILIZADOR":1,"NOME_COMPLETO":"Coordenador Teste","EMAIL":"coordenador.teste@email.com","FUNCAO":"COORDENADOR","ATIVO":"S","DATA_CRIACAO":"2025-08-05T16:58:33.450936Z"}
+{"ID_UTILIZADOR":2,"NOME_COMPLETO":"Técnico Teste","EMAIL":"tecnico.teste@email.com","FUNCAO":"TECNICO","ATIVO":"S","DATA_CRIACAO":"2025-08-05T16:58:33.456175Z"}
+{"ID_UTILIZADOR":3,"NOME_COMPLETO":"Formador Teste","EMAIL":"formador.teste@email.com","FUNCAO":"FORMADOR","ATIVO":"S","DATA_CRIACAO":"2025-08-05T16:58:33.459740Z"}
+{"ID_UTILIZADOR":4,"NOME_COMPLETO":"Admin","EMAIL":"heldertoucas@gmail.com","FUNCAO":"COORDENADOR","ATIVO":"S","DATA_CRIACAO":"2025-08-05T17:31:08.739055Z"}
+{"ID_UTILIZADOR":7,"NOME_COMPLETO":"Formadora Teste Beta","EMAIL":"formadora.beta@email.com","FUNCAO":"FORMADOR","ATIVO":"S","DATA_CRIACAO":"2025-08-05T17:31:08.739055Z"}
