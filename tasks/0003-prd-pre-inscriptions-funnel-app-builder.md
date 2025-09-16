@@ -23,7 +23,7 @@ This feature provides the **Técnico (Technician)** with an intelligent, semi-au
 ## 4. Functional Requirements
 
 1.  **Display New Pre-inscriptions:** The APEX application must display a list of all records from the `PRE_INSCRICOES` table where `ID_ESTADO_PRE_INSCRICAO` is `1` (Status: "Nova"). This will be implemented using an APEX Interactive Grid.
-2.  **Visual Identification Tags:** In the list view (FR1), each pre-inscription must have a visual tag or indicator to quickly inform the Technician if the citizen is likely new or already exists in the `INSCRITOS` database (based on a NIF/email check). This will be achieved using HTML Expressions within the Interactive Grid column.
+2.  **Visual Identification Tags:** In the list view (FR1), each pre-inscription must have a visual tag or indicator to quickly inform the Technician if the citizen is likely new or already exists in the `INSCRITOS` database (based on a NIF/email check). This will be achieved using HTML Expressions within the Interactive Grid column, calling a PL/SQL function `APP_UTIL_PKG.is_pre_inscrito_novo`.
 3.  **Single Pre-inscription Processing:**
     a. Clicking on a single pre-inscription in the list must open a modal form to process it.
     b. The system must automatically query the `INSCRITOS` table for a matching `NIF` or `Email` from the selected pre-inscription.
@@ -54,7 +54,7 @@ This feature provides the **Técnico (Technician)** with an intelligent, semi-au
 *   The status of pre-inscriptions is managed via the `ID_ESTADO_PRE_INSCRICAO` column in the `PRE_INSCRICOES` table. The relevant values are:
     *   `1`: Nova
     *   `3`: Convertida em Inscrição
-*   The check for existing citizens must be performed against both the `NIF` and `Email` columns in the `INSCRITOS` table, likely using a PL/SQL function.
+*   The check for existing citizens must be performed against both the `NIF` and `Email` columns in the `INSCRITOS` table, likely using a PL/SQL function within the `APP_UTIL_PKG` package.
 *   Batch processing logic should be implemented using the `APEX_COLLECTION` package to temporarily store the selected rows for server-side processing, triggered by APEX page processes.
 
 ## 8. Success Metrics
